@@ -1,271 +1,234 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Seu Nome — Desenvolvedor(a) Web</title>
-<meta name="description" content="Portfólio de Seu Nome, desenvolvedor(a) web focado(a) em interfaces rápidas, acessíveis e bem escritas." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luis Fernando — Desenvolvedor(a) Web</title>
+  <meta name="description" content="Portfólio de Seu Nome, desenvolvedor(a) web focado(a) em interfaces rápidas, acessíveis e bem escritas." />
 
-<!--
-  ============================================================
-  COMO PERSONALIZAR ESTE PROJETO
-  ============================================================
-  Arquivos:
-  - index.html   → conteúdo e estrutura
-  - style.css    → cores, fontes e layout (variáveis no topo, em :root)
-  - script.js    → menu mobile, animações de scroll e efeito do terminal
-
-  1. Use Ctrl+F (ou Cmd+F) neste arquivo e procure por [ ] — todo
-     texto entre colchetes é placeholder e deve ser substituído.
-  2. Troque os links "#" pelos seus links reais (GitHub, LinkedIn etc).
-  3. Substitua o avatar de iniciais (seção #sobre) por uma <img> sua,
-     se quiser.
-  4. Para adicionar/remover projetos, copie um bloco
-     <article class="project-card"> inteiro e ajuste o conteúdo.
-  5. Mantenha os 3 arquivos na mesma pasta para tudo funcionar.
-  ============================================================
--->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
-<header>
-  <nav class="wrap">
-    <a class="logo" href="#top">&lt;/<span>Fernando</span>&gt;</a>
-    <div class="nav-links" id="navLinks">
-      <a href="#sobre">Sobre</a>
-      <a href="#skills">Skills</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#experiencia">Experiência</a>
-      <a href="#contato">Contato</a>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-</header>
-
-<main id="top">
-
-  <!-- ===================== HERO ===================== -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">$ desenvolvedor(a) web</span>
-        <h1>Fernando</h1>
-        <p class="lede">Construo interfaces rápidas, acessíveis e bem escritas — do design ao deploy. Foco em [seu foco: ex. front-end com React] e em deixar produtos prontos para escalar.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projetos">Ver projetos</a>
-          <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Baixar CV</a>
-          <a class="btn btn-ghost" href="mailto:seu-email@exemplo.com">Falar comigo</a>
-        </div>
+  <header>
+    <nav class="barra_superior">
+      <a class="logo" href="#top"><span>Luis Fernando</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#sobre">Sobre</a>
+        <a href="#formacoes">Formações</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
       </div>
+      <button id="themeToggle" class="theme-toggle" aria-label="Alterar tema">🌙</button>
 
-      <div class="terminal" aria-hidden="true">
-        <div class="terminal-bar"><span></span><span></span><span></span></div>
-        <div class="terminal-body" id="terminalBody"></div>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="pagina">
+    <!-- Hero -->
+    <section id="hero">
+      <div class="hero-container">
+
+        <div class="hero-texto">
+          <span class="hero-badge">Desenvolvedor Web</span>
+
+          <h1>
+            Olá, eu sou
+            <span>Luis Fernando</span>
+          </h1>
+
+          <p>
+            Desenvolvedor apaixonado por criar interfaces modernas,
+            responsivas e experiências digitais que unem design e
+            tecnologia.
+          </p>
+
+          <div class="hero-botoes">
+            <a href="#portfolio" class="btn-principal">
+              Ver Portfólio
+            </a>
+
+            <a href="#contato" class="btn-secundario">
+              Entrar em Contato
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-foto">
+          <div class="foto-placeholder">
+            LF
+          </div>
+        </div>
+
       </div>
-    </div>
-  </section>
-
-  <!-- ===================== SOBRE ===================== -->
-  <section id="sobre">
-    <div class="wrap reveal">
-      <span class="eyebrow">01 — Quem sou</span>
-      <h2>Sobre mim</h2>
-      <div class="about-grid" style="margin-top:32px;">
-        <div class="avatar">SN</div>
-        <div class="about-text">
-          <p>[Escreva aqui um parágrafo curto sobre sua trajetória: como começou a programar, o que te motiva e que tipo de problema você gosta de resolver.]</p>
-          <p>[Segundo parágrafo, opcional: mencione algo concreto — um projeto marcante, uma comunidade que participa, ou como trabalha em equipe.]</p>
-          <div class="about-facts">
-            <span><strong>Local:</strong> [Sua Cidade, UF]</span>
-            <span><strong>Experiência:</strong> [X anos]</span>
-            <span><strong>Foco:</strong> [Front-end / Back-end / Full Stack]</span>
-            <span><strong>Disponibilidade:</strong> [Aberto a projetos]</span>
+    </section>
+    <!-- Sobre -->
+    <section id="sobre">
+      <div class="bloco_conteudo">
+        <h2>Sobre mim</h2>
+        <div class="sobre-grid" style="margin-top:32px;">
+          <div class="perfil">
+            
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SKILLS ===================== -->
-  <section id="skills">
-    <div class="wrap reveal">
-      <span class="eyebrow">02 — Caixa de ferramentas</span>
-      <h2>Skills &amp; Stack</h2>
-      <p class="section-sub">Tecnologias que uso no dia a dia. Ajuste para refletir seu stack real.</p>
-
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>// frontend</h3>
-          <div class="tag-row">
-            <span class="tag">HTML5</span><span class="tag">CSS3</span>
-            <span class="tag">JavaScript</span><span class="tag">TypeScript</span>
-            <span class="tag">React</span><span class="tag">Next.js</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3>// backend</h3>
-          <div class="tag-row">
-            <span class="tag">Node.js</span><span class="tag">Express</span>
-            <span class="tag">PostgreSQL</span><span class="tag">MongoDB</span>
-            <span class="tag">REST APIs</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3>// ferramentas</h3>
-          <div class="tag-row">
-            <span class="tag">Git</span><span class="tag">Docker</span>
-            <span class="tag">CI/CD</span><span class="tag">Figma</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3>// boas práticas</h3>
-          <div class="tag-row">
-            <span class="tag">Testes automatizados</span><span class="tag">Acessibilidade</span>
-            <span class="tag">Performance</span><span class="tag">Clean Code</span>
+          <div class="sobre-text">
+            <p>Olá, eu sou Luis Fernando! Sou desenvolvedor web com foco em [Front-end / Back-end / Full Stack]. Tenho experiência em [HTML, CSS, JavaScript, Python] e sou apaixonado por criar soluções que sejam eficientes, escaláveis e fáceis de usar.
+            </p>
+            <p>Já criei projetos pessoais que resolvem problemas reais como [calculadora de IMC, lista de tarefas, buscador de ofertas e etc.] e tenho interesse em contribuir para projetos open source.</p>
+            <div class="Endereco">
+              <span><strong>Local:</strong> [Paraíso, CÉU]</span>
+              <span><strong>Experiência:</strong> [Só em projetos pessoais 5 anos]</span>
+              <span><strong>Foco:</strong> [Front-end / Back-end / Full Stack]</span>
+              <span><strong>Disponibilidade:</strong> [Aberto a projetos]</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===================== PROJETOS ===================== -->
-  <section id="projetos">
-    <div class="wrap reveal">
-      <span class="eyebrow">03 — Trabalho selecionado</span>
-      <h2>Projetos</h2>
-      <p class="section-sub">Substitua pelos seus projetos reais — capriche na descrição do problema resolvido, não só na lista de tecnologias.</p>
+    <!-- Formações -->
+    <section id="formacoes">
+      <div class="bloco_conteudo">
+        <h2>Formações</h2>
+        <p class="section-sub">Tecnologias que uso no dia a dia. Ajuste para refletir seu stack real.</p>
 
-      <div class="projects-grid">
-
-        <article class="project-card">
-          <div class="project-top">
-            <h3>[Nome do Projeto A]</h3>
+        <div class="formacoes-grid">
+          <div class="formacoes_card">
+            <h3>Cursos</h3>
+            <div class="tag-row">
+              <span class="tag">HTML5, CSS (Mundo 1, 2 e 3)- Curso em Video</span><span class="tag">Python (Mundo 1, 2 e 3)- Curso em Video</span>
+              <span class="tag">Ingles (Cursando) - Curso em Video</span>
+            </div>
           </div>
-          <p>[Uma frase: que problema esse projeto resolve e para quem.]</p>
-          <div class="project-tags">
-            <span>React</span><span>Node.js</span><span>PostgreSQL</span>
+          <div class="formacoes_card">
+            <h3>Idiomas</h3>
+            <div class="tag-row">
+              <span class="tag">Português</span><span class="tag">Basico Inglês</span>
+              <span class="tag">Basico Espanhol</span>
+            </div>
           </div>
-          <div class="project-links">
-            <a href="#" target="_blank" rel="noopener">Código →</a>
-            <a href="#" target="_blank" rel="noopener">Demo →</a>
+          <div class="formacoes_card">
+            <h3>Formação Educacional</h3>
+            <div class="tag-row">
+              <span class="tag">Cursando Tecnologia em Análise e Desenvolvimento de Sistemas</span>
+            </div>
           </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <h3>[Nome do Projeto B]</h3>
-          </div>
-          <p>[Uma frase: que problema esse projeto resolve e para quem.]</p>
-          <div class="project-tags">
-            <span>Next.js</span><span>TypeScript</span><span>Tailwind</span>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank" rel="noopener">Código →</a>
-            <a href="#" target="_blank" rel="noopener">Demo →</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <h3>[Nome do Projeto C]</h3>
-          </div>
-          <p>[Uma frase: que problema esse projeto resolve e para quem.]</p>
-          <div class="project-tags">
-            <span>JavaScript</span><span>Express</span><span>MongoDB</span>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank" rel="noopener">Código →</a>
-            <a href="#" target="_blank" rel="noopener">Demo →</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <h3>[Nome do Projeto D]</h3>
-          </div>
-          <p>[Uma frase: que problema esse projeto resolve e para quem.]</p>
-          <div class="project-tags">
-            <span>React Native</span><span>Firebase</span>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank" rel="noopener">Código →</a>
-            <a href="#" target="_blank" rel="noopener">Demo →</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== EXPERIÊNCIA ===================== -->
-  <section id="experiencia">
-    <div class="wrap reveal">
-      <span class="eyebrow">04 — Trajetória</span>
-      <h2>Experiência</h2>
-      <p class="section-sub">Ordem cronológica reversa — a mais recente primeiro.</p>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <span class="timeline-date">[2024 — Atual]</span>
-          <h3>[Cargo, ex: Desenvolvedor(a) Front-end]</h3>
-          <p class="role-co">[Nome da Empresa] · [Remoto / Cidade]</p>
-          <ul>
-            <li>[Resultado concreto: ex. reduziu tempo de carregamento em X%]</li>
-            <li>[Responsabilidade principal no time]</li>
-          </ul>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-date">[2022 — 2024]</span>
-          <h3>[Cargo anterior]</h3>
-          <p class="role-co">[Nome da Empresa] · [Remoto / Cidade]</p>
-          <ul>
-            <li>[Resultado concreto]</li>
-            <li>[Responsabilidade principal]</li>
-          </ul>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-date">[2021 — 2022]</span>
-          <h3>[Primeira experiência / estágio]</h3>
-          <p class="role-co">[Nome da Empresa] · [Remoto / Cidade]</p>
-          <ul>
-            <li>[O que aprendeu / entregou]</li>
-          </ul>
+          
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===================== CONTATO ===================== -->
-  <section id="contato">
-    <div class="wrap reveal">
-      <div class="contact-box">
-        <div>
-          <h2>Vamos conversar?</h2>
-          <p>Aberto(a) a propostas de trabalho, freelas e boas conversas sobre tecnologia. Responda em até [X dias úteis].</p>
-        </div>
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:seu-email@exemplo.com">seu-email@exemplo.com</a>
-          <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">LinkedIn</a>
+    <!-- Portfólio -->
+    <section id="portfolio">
+      <div class="bloco_conteudo">
+        <h2>Portfólio</h2>
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <div class="portfolio-top">
+              <h3>[Nome do Projeto A]</h3>
+            </div>
+            <p>[Uma frase: que problema esse projeto resolve e para quem.]</p>
+            <div class="portfolio-tags">
+              <span>React</span><span>Node.js</span><span>PostgreSQL</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="#" target="_blank" rel="noopener">Código →</a>
+              <a href="#" target="_blank" rel="noopener">Demo →</a>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-top">
+              <h3>[Nome do Projeto B]</h3>
+            </div>
+            <p>[Uma frase: que problema esse projeto resolve e para quem.]</p>
+            <div class="portfolio-tags">
+              <span>Next.js</span><span>TypeScript</span><span>Tailwind</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="#" target="_blank" rel="noopener">Código →</a>
+              <a href="#" target="_blank" rel="noopener">Demo →</a>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-top">
+              <h3>[Nome do Projeto C]</h3>
+            </div>
+            <p>[Uma frase: que problema esse projeto resolve e para quem.]</p>
+            <div class="portfolio-tags">
+              <span>JavaScript</span><span>Express</span><span>MongoDB</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="#" target="_blank" rel="noopener">Código →</a>
+              <a href="#" target="_blank" rel="noopener">Demo →</a>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-top">
+              <h3>[Nome do Projeto D]</h3>
+            </div>
+            <p>[Uma frase: que problema esse projeto resolve e para quem.]</p>
+            <div class="portfolio-tags">
+              <span>React Native</span><span>Firebase</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="#" target="_blank" rel="noopener">Código →</a>
+              <a href="#" target="_blank" rel="noopener">Demo →</a>
+            </div>
+          </article>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-</main>
+    <!-- Contato -->
+    <section id="contato">
+      <div class="contato">
+        <h2>Entre em Contato</h2>
 
-<footer class="wrap">
-  <span>© 2026 [Seu Nome]. Todos os direitos reservados.</span>
-  <span>Edite estes arquivos para personalizar — busque por [ ]</span>
-</footer>
+        <form id="formContato">
+          <div class="grupo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome">
+          </div>
 
-<script src="script.js"></script>
+          <div class="grupo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email">
+          </div>
+
+          <div class="grupo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem"></textarea>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+      <!-- Modal -->
+      <div class="modal" id="modal">
+        <div class="modal-content">
+          <h3>Sucesso!</h3>
+          <p>Mensagem enviada com sucesso!</p>
+          <button onclick="fecharModal()">OK</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="barra_inferior">
+    <span>© 2026 [Seu Nome]. Todos os direitos reservados.</span>
+    <span>Edite estes arquivos para personalizar — busque por [ ]</span>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

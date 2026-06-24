@@ -1,74 +1,101 @@
-// menu mobile
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click', () => {
-  const open = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', open);
-});
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  navLinks.classList.remove('open');
-  navToggle.setAttribute('aria-expanded', false);
-}));
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
+const themeToggle = document.getElementById("themeToggle");
 
-// scroll reveal
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const revealEls = document.querySelectorAll('.reveal');
-if (reduceMotion) {
-  revealEls.forEach(el => el.classList.add('in'));
-} else {
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => obs.observe(el));
+const temaSalvo = localStorage.getItem("tema");
+
+if (temaSalvo === "dark") {
+    document.body.classList.add("dark");
+    themeToggle.textContent = "☀️";
 }
 
-// terminal typing effect
-const lines = [
-  { prompt: '$ whoami', out: '> [Seu Nome] — Dev [Full Stack]' },
-  { prompt: '$ stack --list', out: '> React · Node.js · TypeScript · PostgreSQL' },
-  { prompt: '$ status', out: '> Disponível para novos projetos' }
-];
-const body = document.getElementById('terminalBody');
+themeToggle.addEventListener("click", () => {
 
-function typeLine(text, className, el, cb) {
-  let i = 0;
-  const span = document.createElement('div');
-  span.className = 'terminal-line ' + className;
-  el.appendChild(span);
-  const speed = reduceMotion ? 0 : 22;
-  if (reduceMotion) {
-    span.textContent = text;
-    cb();
-    return;
-  }
-  const interval = setInterval(() => {
-    span.textContent = text.slice(0, i + 1);
-    i++;
-    if (i >= text.length) {
-      clearInterval(interval);
-      cb();
+    document.body.classList.toggle("dark");
+
+    const modoEscuro =
+        document.body.classList.contains("dark");
+
+    if (modoEscuro) {
+        themeToggle.textContent = "☀️";
+        localStorage.setItem("tema", "dark");
+    } else {
+        themeToggle.textContent = "🌙";
+        localStorage.setItem("tema", "light");
     }
-  }, speed);
+
+});
+
+navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+
+    const expanded =
+        navToggle.getAttribute("aria-expanded") === "true";
+
+    navToggle.setAttribute(
+        "aria-expanded",
+        !expanded
+    );
+});
+
+const form = document.getElementById("formContato");
+const modal = document.getElementById("modal");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const nome = document
+        .getElementById("nome")
+        .value
+        .trim();
+
+    const email = document
+        .getElementById("email")
+        .value
+        .trim();
+
+    const mensagem = document
+        .getElementById("mensagem")
+        .value
+        .trim();
+
+    if(
+        nome === "" ||
+        email === "" ||
+        mensagem === ""
+    ){
+        alert("Preencha todos os campos.");
+        return;
+    }
+
+    const emailValido =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailValido.test(email)){
+        alert("Digite um e-mail válido.");
+        return;
+    }
+
+    form.reset();
+
+    modal.classList.add("active");
+});
+
+function fecharModal(){
+    modal.classList.remove("active");
 }
 
-function runSequence(index) {
-  if (index >= lines.length) {
-    const caret = document.createElement('span');
-    caret.className = 'caret';
-    body.appendChild(caret);
-    return;
-  }
-  typeLine(lines[index].prompt, 'prompt', body, () => {
-    setTimeout(() => {
-      typeLine(lines[index].out, 'out', body, () => {
-        setTimeout(() => runSequence(index + 1), 280);
-      });
-    }, 180);
-  });
-}
-runSequence(0);
+window.addEventListener("click", (e) => {
+    if(e.target === modal){
+        fecharModal();
+    }
+});
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
