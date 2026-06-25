@@ -71,7 +71,7 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(255,255,255,.95);
+    background:var(--surface);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--border);
 }
@@ -91,6 +91,7 @@ header{
 }
 
 .nav-links{
+    background:var(--surface);
     display:flex;
     gap:25px;
 }
@@ -116,7 +117,7 @@ header{
 .nav-toggle span{
     width:25px;
     height:3px;
-    background:#000;
+    background:var(--text);
     border-radius:5px;
 }
 
@@ -133,8 +134,10 @@ header{
     width:220px;
     height:220px;
     border-radius:50%;
-    background-image: url(imagens/alien-1534979_640.webp);
-    background-size:center;
+    background-image:url("imagens/alien-1534979_640.webp");
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
     color:white;
     display:flex;
     align-items:center;
@@ -148,15 +151,15 @@ header{
     margin-bottom:15px;
 }
 
-.Endereco{
+.endereco{
     margin-top:20px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:15px;
 }
 
-.Endereco span{
-    background:white;
+.endereco span{
+    background:var(--surface);
     padding:15px;
     border-radius:10px;
     border:1px solid var(--border);
@@ -206,7 +209,7 @@ header{
 }
 
 .portfolio-card{
-    background:white;
+    background:var(--surface);
     padding:25px;
     border-radius:16px;
     box-shadow:var(--shadow);
@@ -270,6 +273,8 @@ header{
 input,
 textarea{
     padding:14px;
+    background:var(--surface);
+    color:var(--text);
     border:1px solid var(--border);
     border-radius:10px;
     font-size:1rem;
@@ -313,7 +318,8 @@ button[type="submit"]:hover{
 }
 
 .modal-content{
-    background:white;
+    background:var(--surface);
+    color:var(--text);
     padding:30px;
     border-radius:15px;
     text-align:center;
@@ -361,11 +367,12 @@ button[type="submit"]:hover{
     }
 
     .nav-links{
+        border-top:1px solid var(--border);
         position:absolute;
         top:75px;
         left:0;
         right:0;
-        background:white;
+        background:var(--surface);
         flex-direction:column;
         padding:20px;
         display:none;
@@ -526,7 +533,7 @@ textarea,
 button,
 .portfolio-card,
 .formacoes_card,
-.Endereco span{
+.endereco span{
     transition:
         background-color .3s ease,
         color .3s ease,
