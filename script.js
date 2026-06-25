@@ -6,7 +6,7 @@ const temaSalvo = localStorage.getItem("tema");
 
 if (temaSalvo === "dark") {
     document.body.classList.add("dark");
-    themeToggle.textContent = "☀️";
+    themeToggle.textContent = "🌙";
 }
 
 themeToggle.addEventListener("click", () => {
@@ -17,10 +17,10 @@ themeToggle.addEventListener("click", () => {
         document.body.classList.contains("dark");
 
     if (modoEscuro) {
-        themeToggle.textContent = "☀️";
+        themeToggle.textContent = "🌙";
         localStorage.setItem("tema", "dark");
     } else {
-        themeToggle.textContent = "🌙";
+        themeToggle.textContent = "☀️";
         localStorage.setItem("tema", "light");
     }
 
