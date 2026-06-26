@@ -6,22 +6,21 @@ const temaSalvo = localStorage.getItem("tema");
 
 if (temaSalvo === "dark") {
     document.body.classList.add("dark");
-    themeToggle.textContent = "🌙";
+    themeToggle.checked = true;
 }
 
-themeToggle.addEventListener("click", () => {
+themeToggle.addEventListener("change", () => {
 
-    document.body.classList.toggle("dark");
+    if (themeToggle.checked) {
 
-    const modoEscuro =
-        document.body.classList.contains("dark");
-
-    if (modoEscuro) {
-        themeToggle.textContent = "🌙";
+        document.body.classList.add("dark");
         localStorage.setItem("tema", "dark");
+
     } else {
-        themeToggle.textContent = "☀️";
+
+        document.body.classList.remove("dark");
         localStorage.setItem("tema", "light");
+
     }
 
 });
