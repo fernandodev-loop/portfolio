@@ -1,15 +1,45 @@
+/* ======================================================
+   VARIÁVEIS GLOBAIS (TEMA CLARO)
+   ====================================================== */
+
 :root{
+
+    /* Cor de fundo da página */
     --bg:#f1f1f1;
+
+    /* Cor de cartões, formulários e superfícies */
     --surface:#ffffff;
+
+    /* Cor principal dos textos */
     --text:#0f172a;
+
+    /* Cor de textos secundários */
     --muted:#64748b;
+
+    /* Cor principal utilizada em botões e links */
     --primary:#2563eb;
+
+    /* Cor utilizada quando o mouse passa sobre elementos */
     --primary-hover:#1d4ed8;
+
+    /* Cor das bordas */
     --border:#e2e8f0;
+
+    /* Sombra padrão */
     --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    /* Fonte dos títulos */
     --font-title:'Space Grotesk',sans-serif;
+
+    /* Fonte dos textos */
     --font-body:'Inter',sans-serif;
 }
+
+/* ======================================================
+   TEMA ESCURO
+   Quando a classe .dark é adicionada ao body,
+   todas as variáveis acima são substituídas.
+   ====================================================== */
 
 .dark{
     --bg:#0f172a;
@@ -22,15 +52,25 @@
     --shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
+/* ======================================================
+   RESET CSS
+   Remove margens e espaçamentos padrões do navegador.
+   ====================================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+/* Rolagem suave ao clicar nos links internos */
 html{
     scroll-behavior:smooth;
 }
+
+/* ======================================================
+   ESTILO GERAL DA PÁGINA
+   ====================================================== */
 
 body{
     background:var(--bg);
@@ -39,40 +79,50 @@ body{
     line-height:1.6;
 }
 
+/* Remove sublinhado dos links */
 a{
     text-decoration:none;
     color:inherit;
 }
 
+/* Espaçamento padrão entre as seções */
 section{
     padding:80px 20px;
 }
 
+/* Linha separando as seções */
 .separa-section{
-    border-top: var(--primary-hover) 1px solid;
+    border-top:var(--primary-hover) 1px solid;
 }
 
+/* Limita a largura máxima do conteúdo */
 .bloco_conteudo{
     max-width:1200px;
     margin:auto;
 }
 
+/* Fonte dos títulos */
 h1,h2,h3{
     font-family:var(--font-title);
 }
 
+/* Estilo dos títulos principais */
 h2{
     font-size:2rem;
     margin-bottom:10px;
 }
 
+/* Texto abaixo do título das seções */
 .section-sub{
     color:var(--muted);
     margin-bottom:30px;
 }
 
-/* HEADER */
+/* ======================================================
+   HEADER
+   ====================================================== */
 
+/* Cabeçalho fixo no topo */
 header{
     position:sticky;
     top:0;
@@ -82,6 +132,7 @@ header{
     border-bottom:1px solid var(--border);
 }
 
+/* Barra de navegação */
 .barra_superior{
     max-width:1200px;
     margin:auto;
@@ -91,25 +142,30 @@ header{
     justify-content:space-between;
 }
 
+/* Logo */
 .logo{
     font-size:1.3rem;
     font-weight:700;
 }
 
+/* Links do menu */
 .nav-links{
     display:flex;
     gap:25px;
 }
 
+/* Estilo dos links */
 .nav-links a{
     font-weight:500;
     transition:.3s;
 }
 
+/* Cor ao passar o mouse */
 .nav-links a:hover{
     color:var(--primary);
 }
 
+/* Botão do menu mobile */
 .nav-toggle{
     display:none;
     flex-direction:column;
@@ -119,6 +175,7 @@ header{
     cursor:pointer;
 }
 
+/* Barrinhas do menu */
 .nav-toggle span{
     width:25px;
     height:3px;
@@ -126,18 +183,18 @@ header{
     border-radius:5px;
 }
 
-.theme-toggle{
-    width:45px;
-    height:45px;
-    border:none;
-}
+/* ======================================================
+   BOTÃO DE TEMA
+   ====================================================== */
 
+/* Container do interruptor */
 .theme-switch{
     display:flex;
     align-items:center;
     gap:10px;
 }
 
+/* Estrutura do switch */
 .switch{
     position:relative;
     display:inline-block;
@@ -145,43 +202,51 @@ header{
     height:32px;
 }
 
+/* Esconde o checkbox */
 .switch input{
     opacity:0;
     width:0;
     height:0;
 }
 
+/* Fundo do interruptor */
 .slider{
     position:absolute;
-    cursor:pointer;
     inset:0;
+    cursor:pointer;
     background:#cbd5e1;
     transition:.4s;
     border-radius:50px;
 }
 
+/* Bolinha do interruptor */
 .slider::before{
     content:"";
     position:absolute;
-    height:24px;
     width:24px;
+    height:24px;
     left:4px;
     bottom:4px;
     background:white;
-    transition:.4s;
     border-radius:50%;
+    transition:.4s;
 }
 
+/* Cor quando ativado */
 .switch input:checked + .slider{
     background:var(--primary);
 }
 
+/* Move a bolinha */
 .switch input:checked + .slider::before{
     transform:translateX(28px);
 }
 
-/* HERO */
+/* ======================================================
+   HERO
+   ====================================================== */
 
+/* Primeira seção da página */
 #hero{
     min-height:90vh;
     display:flex;
@@ -189,37 +254,41 @@ header{
     padding:60px 20px;
 }
 
+/* Organização em duas colunas */
 .hero-container{
     max-width:1200px;
     margin:auto;
     width:100%;
-
     display:grid;
     grid-template-columns:1.2fr .8fr;
     gap:50px;
     align-items:center;
 }
 
+/* Etiqueta azul */
 .hero-badge{
     display:inline-block;
     background:#dbeafe;
     color:var(--primary);
     padding:8px 14px;
-    border-radius:999px;
+    border-radius:10px;
     font-weight:600;
     margin-bottom:20px;
 }
 
+/* Título principal */
 .hero-texto h1{
     font-size:4rem;
     line-height:1.1;
     margin-bottom:20px;
 }
 
+/* Nome destacado */
 .hero-texto h1 span{
     color:var(--primary);
 }
 
+/* Texto da apresentação */
 .hero-texto p{
     font-size:1.1rem;
     color:var(--muted);
@@ -227,12 +296,14 @@ header{
     margin-bottom:30px;
 }
 
+/* Área dos botões */
 .hero-botoes{
     display:flex;
     gap:15px;
     flex-wrap:wrap;
 }
 
+/* Botão principal */
 .btn-principal{
     background:var(--primary);
     color:white;
@@ -242,10 +313,12 @@ header{
     transition:.3s;
 }
 
+/* Animação */
 .btn-principal:hover{
     transform:translateY(-2px);
 }
 
+/* Botão secundário */
 .btn-secundario{
     border:2px solid var(--primary);
     color:var(--primary);
@@ -254,73 +327,45 @@ header{
     font-weight:600;
 }
 
+/* Centraliza a foto */
 .hero-foto{
     display:flex;
     justify-content:center;
 }
 
+/* Área da foto */
 .foto-placeholder{
     width:320px;
     height:320px;
     border-radius:50%;
-    background-image:url("imagens/images.jpg");
+    background:var(--primary);
     background-size:cover;
     background-position:center;
-
     display:flex;
-    align-items:center;
     justify-content:center;
-
+    align-items:center;
     color:white;
     font-size:6rem;
     font-weight:700;
-
     box-shadow:0 15px 40px rgba(37,99,235,.3);
 }
 
-@media(max-width:768px){
-    
-    .hero-container{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .hero-texto h1{
-        font-size:2.8rem;
-    }
-
-    .hero-texto p{
-        margin:auto auto 30px;
-    }
-    
-    .hero-foto{
-        order: -1;
-    }
-
-    .hero-botoes{
-        justify-content:center;
-    }
-
-    .foto-placeholder{
-        width:220px;
-        height:220px;
-        font-size:4rem;
-    }
-}
-
-/* SOBRE */
-
+/* ======================================================
+   SOBRE
+   ====================================================== */
 
 .sobre-grid{
-    display: grid;
+    display:grid;
     gap:40px;
     align-items:center;
 }
 
+/* Parágrafos */
 .sobre-text p{
     margin-bottom:15px;
 }
 
+/* Informações pessoais */
 .endereco{
     margin-top:20px;
     display:grid;
@@ -328,6 +373,7 @@ header{
     gap:15px;
 }
 
+/* Cartões */
 .endereco span{
     background:var(--surface);
     padding:15px;
@@ -335,8 +381,11 @@ header{
     border:1px solid var(--border);
 }
 
-/* FORMAÇÕES */
+/* ======================================================
+   FORMAÇÕES
+   ====================================================== */
 
+/* Grid dos cartões */
 .formacoes-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -344,32 +393,38 @@ header{
     margin-top:30px;
 }
 
+/* Cartão */
 .formacoes_card{
     background:var(--surface);
-    border-radius:16px;
     padding:25px;
+    border-radius:16px;
     box-shadow:var(--shadow);
 }
 
+/* Espaço abaixo do título */
 .formacoes_card h3{
     margin-bottom:15px;
 }
 
+/* Área das tags */
 .tag-row{
     display:flex;
     flex-wrap:wrap;
     gap:10px;
 }
 
+/* Tag individual */
 .tag{
     background:#eef2ff;
     color:var(--primary);
     padding:8px 12px;
-    border-radius:999px;
+    border-radius:10px;
     font-size:.9rem;
 }
 
-/* PORTFÓLIO */
+/* ======================================================
+   PORTFÓLIO
+   ====================================================== */
 
 .portfolio-grid{
     margin-top:30px;
@@ -378,6 +433,7 @@ header{
     gap:25px;
 }
 
+/* Cartão */
 .portfolio-card{
     background:var(--surface);
     padding:25px;
@@ -386,15 +442,18 @@ header{
     transition:.3s;
 }
 
+/* Eleva o cartão */
 .portfolio-card:hover{
     transform:translateY(-5px);
 }
 
+/* Texto */
 .portfolio-card p{
     margin:15px 0;
     color:var(--muted);
 }
 
+/* Tecnologias */
 .portfolio-tags{
     display:flex;
     flex-wrap:wrap;
@@ -402,14 +461,16 @@ header{
     margin-bottom:20px;
 }
 
+/* Cada tecnologia */
 .portfolio-tags span{
     background:#eff6ff;
     color:var(--primary);
     padding:6px 10px;
-    border-radius:999px;
+    border-radius:10px;
     font-size:.85rem;
 }
 
+/* Links */
 .portfolio-links{
     display:flex;
     gap:20px;
@@ -420,13 +481,17 @@ header{
     font-weight:600;
 }
 
-/* CONTATO */
+/* ======================================================
+   CONTATO
+   ====================================================== */
 
+/* Centraliza formulário */
 .contato{
     max-width:700px;
     margin:auto;
 }
 
+/* Layout do formulário */
 #formContato{
     margin-top:30px;
     display:flex;
@@ -434,12 +499,14 @@ header{
     gap:20px;
 }
 
+/* Grupo de campos */
 .grupo{
     display:flex;
     flex-direction:column;
     gap:8px;
 }
 
+/* Campos do formulário */
 input,
 textarea{
     padding:14px;
@@ -450,11 +517,13 @@ textarea{
     font-size:1rem;
 }
 
+/* Área de texto */
 textarea{
     resize:vertical;
     min-height:150px;
 }
 
+/* Botão enviar */
 button[type="submit"]{
     background:var(--primary);
     color:white;
@@ -462,17 +531,20 @@ button[type="submit"]{
     padding:15px;
     border-radius:10px;
     cursor:pointer;
-    font-size:1rem;
     font-weight:600;
     transition:.3s;
 }
 
+/* Hover */
 button[type="submit"]:hover{
     background:var(--primary-hover);
 }
 
-/* MODAL */
+/* ======================================================
+   MODAL
+   ====================================================== */
 
+/* Fundo escuro */
 .modal{
     position:fixed;
     inset:0;
@@ -480,13 +552,14 @@ button[type="submit"]:hover{
     display:none;
     justify-content:center;
     align-items:center;
-    padding:20px;
 }
 
+/* Exibe o modal */
 .modal.active{
     display:flex;
 }
 
+/* Caixa do modal */
 .modal-content{
     background:var(--surface);
     color:var(--text);
@@ -497,62 +570,68 @@ button[type="submit"]:hover{
     width:100%;
 }
 
-.modal-content h3{
-    margin-bottom:10px;
-}
+/* ======================================================
+   FOOTER
+   ====================================================== */
 
-.modal-content button{
-    margin-top:20px;
-    background:var(--primary);
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:10px;
-    cursor:pointer;
-}
-
-/* FOOTER */
-
+/* Rodapé */
 .barra_inferior{
     padding:25px;
     text-align:center;
     border-top:1px solid var(--border);
     color:var(--muted);
-    display:flex;
-    flex-direction:column;
-    gap:10px;
 }
 
-/* RESPONSIVO */
+/* ======================================================
+   RESPONSIVIDADE
+   ====================================================== */
 
 @media(max-width:768px){
 
-    .sobre-grid{
+    /* Hero em uma coluna */
+    .hero-container{
         grid-template-columns:1fr;
         text-align:center;
     }
 
+    /* Diminui o título */
+    .hero-texto h1{
+        font-size:2.8rem;
+    }
+
+    /* Foto acima do texto */
+    .hero-foto{
+        order:-1;
+    }
+
+    /* Exibe menu hambúrguer */
     .nav-toggle{
         display:flex;
     }
 
+    /* Menu mobile */
     .nav-links{
-        border-top:1px solid var(--border);
         position:absolute;
         top:75px;
         left:0;
         right:0;
-        background:var(--surface);
+        display:none;
         flex-direction:column;
         padding:20px;
-        display:none;
+        background:var(--surface);
+        border-top:1px solid var(--border);
         border-bottom:1px solid var(--border);
     }
 
+    /* Mostra menu ao clicar */
     .nav-links.active{
         display:flex;
     }
 }
+
+/* ======================================================
+   TRANSIÇÃO ENTRE TEMA CLARO E ESCURO
+   ====================================================== */
 
 body,
 header,
@@ -563,6 +642,7 @@ button,
 .portfolio-card,
 .formacoes_card,
 .endereco span{
+
     transition:
         background-color .3s ease,
         color .3s ease,

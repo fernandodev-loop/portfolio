@@ -1,28 +1,56 @@
 <!DOCTYPE html>
+<!-- Define o tipo do documento como HTML5 -->
 <html lang="pt-BR">
 <head>
+
+  <!-- Define a codificação de caracteres -->
   <meta charset="UTF-8" />
+
+  <!-- Torna a página responsiva em dispositivos móveis -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Título exibido na aba do navegador -->
   <title>Luis Fernando — Desenvolvedor(a) Web</title>
+
+  <!-- Descrição da página para mecanismos de busca -->
   <meta name="description" content="Portfólio de Seu Nome, desenvolvedor(a) web focado(a) em interfaces rápidas, acessíveis e bem escritas." />
 
+  <!-- Pré-conecta aos servidores do Google Fonts para melhorar o carregamento -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Importação das fontes utilizadas no projeto -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Arquivo CSS principal -->
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+
+  <!-- ================= CABEÇALHO ================= -->
   <header>
+
+    <!-- Barra de navegação -->
     <nav class="barra_superior">
-      <a class="logo" href="#top"><span>Luis Fernando</span></a>
+
+      <!-- Logo/Nome -->
+      <a class="logo" href="#top">
+        <span>Luis Fernando</span>
+      </a>
+
+      <!-- Links de navegação -->
       <div class="nav-links" id="navLinks">
         <a href="#sobre">Sobre</a>
         <a href="#formacoes">Formações</a>
         <a href="#portfolio">Portfólio</a>
         <a href="#contato">Contato</a>
       </div>
+
+      <!-- Botão para alternar entre tema claro e escuro -->
       <div class="theme-switch">
+
         <span>☀️</span>
 
         <label class="switch">
@@ -31,33 +59,56 @@
         </label>
 
         <span>🌙</span>
+
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+
+      <!-- Botão do menu para dispositivos móveis -->
+      <button class="nav-toggle"
+              id="navToggle"
+              aria-label="Abrir menu"
+              aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
       </button>
+
     </nav>
+
   </header>
 
+  <!-- ================= CONTEÚDO PRINCIPAL ================= -->
   <main id="pagina">
-    <!-- Hero -->
+
+    <!-- ===== Seção Hero (Apresentação inicial) ===== -->
     <section id="hero">
+
       <div class="hero-container">
 
+        <!-- Texto principal -->
         <div class="hero-texto">
-          <span class="hero-badge">Desenvolvedor Web</span>
 
+          <!-- Pequena identificação -->
+          <span class="hero-badge">
+            Desenvolvedor Web
+          </span>
+
+          <!-- Título -->
           <h1>
             Olá, eu sou
             <span>Luis Fernando</span>
           </h1>
 
+          <!-- Breve descrição -->
           <p>
             Desenvolvedor apaixonado por criar interfaces modernas,
-            responsivas e experiências digitais que unem design e
-            tecnologia.
+            responsivas e experiências digitais que unem design e tecnologia.
           </p>
 
+          <!-- Botões de ação -->
           <div class="hero-botoes">
+
             <a href="#portfolio" class="btn-principal">
               Ver Portfólio
             </a>
@@ -65,145 +116,330 @@
             <a href="#contato" class="btn-secundario">
               Entrar em Contato
             </a>
+
           </div>
+
         </div>
 
+        <!-- Área destinada à foto -->
         <div class="hero-foto">
+
           <div class="foto-placeholder">
-            
+            <!-- Pode ser substituído por uma imagem -->
+            LF
           </div>
+
         </div>
 
       </div>
+
     </section>
-    <!-- Sobre -->
+
+    <!-- ===== Seção Sobre ===== -->
     <section id="sobre" class="separa-section">
+
       <div class="bloco_conteudo">
+
         <h2>Sobre mim</h2>
+
         <div class="sobre-grid" style="margin-top:32px;">
+
           <div class="sobre-text">
-            <p>Olá, eu sou Luis Fernando! Sou desenvolvedor web com foco em [Front-end / Back-end / Full Stack]. Tenho experiência em [HTML, CSS, JavaScript, Python] e sou apaixonado por criar soluções que sejam eficientes, escaláveis e fáceis de usar.
+
+            <!-- Apresentação pessoal -->
+            <p>
+              Olá, eu sou Luis Fernando...
             </p>
-            <p>Já criei projetos pessoais que resolvem problemas reais como [calculadora de IMC, lista de tarefas, buscador de ofertas e etc.] e tenho interesse em contribuir para projetos open source.</p>
+
+            <!-- Experiência -->
+            <p>
+              Já criei projetos pessoais...
+            </p>
+
+            <!-- Informações rápidas -->
             <div class="endereco">
-              <span><strong>Local:</strong> [Paraíso, CÉU]</span>
-              <span><strong>Experiência:</strong> [Só em projetos pessoais 5 anos]</span>
-              <span><strong>Foco:</strong> [Front-end / Back-end / Full Stack]</span>
-              <span><strong>Disponibilidade:</strong> [Aberto a projetos]</span>
+
+              <span>
+                <strong>Local:</strong> Guarabira, PB
+              </span>
+
+              <span>
+                <strong>Experiência:</strong> Só em projetos pessoais
+              </span>
+
+              <span>
+                <strong>Foco:</strong> Front-end / Back-end / Full Stack
+              </span>
+
+              <span>
+                <strong>Disponibilidade:</strong> Aberto a projetos
+              </span>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- Formações -->
+    <!-- ===== Seção Formações ===== -->
     <section id="formacoes" class="separa-section">
+
       <div class="bloco_conteudo">
+
         <h2>Formações</h2>
-        <p class="section-sub">Tecnologias que uso no dia a dia. Ajuste para refletir seu stack real.</p>
 
         <div class="formacoes-grid">
+
+          <!-- Card de cursos -->
           <div class="formacoes_card">
+
             <h3>Cursos</h3>
+
             <div class="tag-row">
-              <span class="tag">HTML5, CSS (Mundo 1, 2 e 3)- Curso em Video</span><span class="tag">Python (Mundo 1, 2 e 3)- Curso em Video</span>
-              <span class="tag">Ingles (Cursando) - Curso em Video</span>
+
+              <span class="tag">
+                HTML5, CSS (Mundo 1, 2 e 3) - Curso em Vídeo
+              </span>
+
+              <span class="tag">
+                Python (Mundo 1, 2 e 3) - Curso em Vídeo
+              </span>
+
+              <span class="tag">
+                Inglês (Cursando) - Curso em Vídeo
+              </span>
+
             </div>
+
           </div>
+
+          <!-- Card de idiomas -->
           <div class="formacoes_card">
+
             <h3>Idiomas</h3>
+
             <div class="tag-row">
-              <span class="tag">Português</span><span class="tag">Basico Inglês</span>
-              <span class="tag">Basico Espanhol</span>
+
+              <span class="tag">
+                Português
+              </span>
+
             </div>
+
           </div>
+
+          <!-- Card de formação acadêmica -->
           <div class="formacoes_card">
+
             <h3>Formação Educacional</h3>
+
             <div class="tag-row">
-              <span class="tag">Cursando Tecnologia em Análise e Desenvolvimento de Sistemas</span>
+
+              <span class="tag">
+                Tecnólogo em Análise e Desenvolvimento de Sistemas
+                <br>
+                Uninter - Guarabira, PB
+                <br>
+                Previsão de conclusão: 2027
+              </span>
+
             </div>
+
           </div>
-          
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- Portfólio -->
+    <!-- ===== Seção Portfólio ===== -->
     <section id="portfolio" class="separa-section">
+
       <div class="bloco_conteudo">
+
         <h2>Portfólio</h2>
+
         <div class="portfolio-grid">
+
+          <!-- Projeto 1 -->
           <article class="portfolio-card">
+
             <div class="portfolio-top">
+
               <h3>Calculadora IMC</h3>
+
             </div>
-            <p>Calculadora de Índice de Massa Corporal</p>
+
+            <p>
+              Calculadora de Índice de Massa Corporal
+            </p>
+
+            <!-- Tecnologias -->
             <div class="portfolio-tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+
             </div>
+
+            <!-- Links do projeto -->
             <div class="portfolio-links">
-              <a href="https://github.com/fernandodev-loop/calculadora-imc" target="_blank" rel="noopener">Código →</a>
-              <a href="https://fernandodev-loop.github.io/calculadora-imc/" target="_blank" rel="noopener">Demo →</a>
+
+              <a href="https://github.com/fernandodev-loop/calculadora-imc"
+                 target="_blank"
+                 rel="noopener">
+
+                Código →
+
+              </a>
+
+              <a href="https://fernandodev-loop.github.io/calculadora-imc/"
+                 target="_blank"
+                 rel="noopener">
+
+                 Site
+
+                </a>
+
             </div>
+
           </article>
+
+          <!-- Projeto 2 -->
           <article class="portfolio-card">
+
             <div class="portfolio-top">
+
               <h3>Lista de Tarefas</h3>
+
             </div>
-            <p>Aplicativo para gerenciar tarefas diárias</p>
+
+            <p>
+              Aplicativo para gerenciar tarefas diárias.
+            </p>
+
+            <!-- Tecnologias -->
             <div class="portfolio-tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+
             </div>
+
+            <!-- Links -->
             <div class="portfolio-links">
-              <a href="https://github.com/fernandodev-loop/lista-tarefas" target="_blank" rel="noopener">Código →</a>
-              <a href="https://fernandodev-loop.github.io/lista-tarefas/" target="_blank" rel="noopener">Demo →</a>
+
+              <a href="https://github.com/fernandodev-loop/lista-tarefas"
+                 target="_blank"
+                 rel="noopener">
+
+                Código →
+
+              </a>
+
+              <a href="https://fernandodev-loop.github.io/lista-tarefas/"
+                 target="_blank"
+                 rel="noopener">
+
+                Site →
+
+              </a>
+
             </div>
+
           </article>
-          
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- Contato -->
+    <!-- ===== Seção Contato ===== -->
     <section id="contato" class="separa-section">
+
       <div class="contato">
+
         <h2>Entre em Contato</h2>
 
+        <!-- Formulário -->
         <form id="formContato">
+
+          <!-- Campo Nome -->
           <div class="grupo">
+
             <label for="nome">Nome</label>
             <input type="text" id="nome">
+
           </div>
 
+          <!-- Campo Email -->
           <div class="grupo">
+
             <label for="email">E-mail</label>
             <input type="email" id="email">
+
           </div>
 
+          <!-- Campo Mensagem -->
           <div class="grupo">
+
             <label for="mensagem">Mensagem</label>
             <textarea id="mensagem"></textarea>
+
           </div>
 
-          <button type="submit">Enviar</button>
+          <!-- Botão de envio -->
+          <button type="submit">
+            Enviar
+          </button>
+
         </form>
+
       </div>
-      <!-- Modal -->
+
+      <!-- Modal exibido após o envio do formulário -->
       <div class="modal" id="modal">
+
         <div class="modal-content">
+
           <h3>Sucesso!</h3>
-          <p>Mensagem enviada com sucesso!</p>
-          <button onclick="fecharModal()">OK</button>
+
+          <p>
+            Mensagem enviada com sucesso!
+          </p>
+
+          <!-- Fecha o modal -->
+          <button onclick="fecharModal()">
+            OK
+          </button>
+
         </div>
+
       </div>
+
     </section>
 
   </main>
 
+  <!-- ================= RODAPÉ ================= -->
   <footer class="barra_inferior">
-    <span>© 2026 Luis Fernando. Todos os direitos reservados.</span>
+
+    <span>
+      © 2026 Luis Fernando. Todos os direitos reservados.
+    </span>
+
   </footer>
 
+  <!-- Arquivo JavaScript responsável pela interatividade -->
   <script src="script.js"></script>
+
 </body>
 </html>
