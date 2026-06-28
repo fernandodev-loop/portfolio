@@ -338,7 +338,7 @@ header{
     width:320px;
     height:320px;
     border-radius:50%;
-    background:var(--primary);
+    background-image: url('imagens/logo.png');
     background-size:cover;
     background-position:center;
     display:flex;
